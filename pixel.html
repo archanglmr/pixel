@@ -55,17 +55,17 @@
         window.onload = function() {
             var colors = [
                 'white',
-                    'black',
-                    'red',
-                    'green',
-                    'blue'
+                'black',
+                'red',
+                'green',
+                'blue'
             ];
             var cursor = 0;
             var cursorMax = colors.length - 1;
             var body = document.body;
             var div = document.getElementsByTagName('div')[0];
 
-            document.body.onkeyup = function(event) {
+            body.onkeyup = function(event) {
                 switch (event.which) {
                     case 70: // 'f' key
                         document.documentElement.webkitRequestFullScreen();
@@ -96,7 +96,7 @@
                         break;
                 }
             };
-            document.body.focus();
+            body.focus();
         };
     </script>
 </head>
