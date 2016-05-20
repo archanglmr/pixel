@@ -21,8 +21,8 @@
             margin: 0 auto;
             text-align: center;
             font-family: Helvetica, Arial, sans-serif;
-            font-size: 24px;
-            line-height: 32px;
+            font-size: 20px;
+            line-height: 26px;
             font-weight: lighter;
         }
         div div {
@@ -33,14 +33,18 @@
             margin: 0 auto;
             text-align: left;
         }
-        div h1 {
+        div h2 {
             margin: 0 0 10px 0;
             padding: 0;
             background-color: white;
             font-weight: lighter;
-            font-size: 48px;
-            line-height: 54px;
+            font-size: 44px;
+            line-height: 50px;
             text-align: center;
+        }
+        div p {
+            margin: 0 0 25px 0;
+            padding: 0;
         }
         div ul {
             margin: 0;
@@ -55,22 +59,23 @@
         window.onload = function() {
             var colors = [
                 'white',
-                    'black',
-                    'red',
-                    'green',
-                    'blue'
+                'black',
+                'red',
+                'green',
+                'blue'
             ];
             var cursor = 0;
             var cursorMax = colors.length - 1;
             var body = document.body;
             var div = document.getElementsByTagName('div')[0];
 
-            document.body.onkeyup = function(event) {
+            body.onkeyup = function(event) {
                 switch (event.which) {
                     case 70: // 'f' key
                         document.documentElement.webkitRequestFullScreen();
 //                        div.style.display = 'none';
                         break;
+
                     case 32: // SPACE
                     case 72: // 'h' key
                         if ('none' === div.style.display) {
@@ -78,8 +83,8 @@
                         } else {
                             div.style.display = 'none';
                         }
-
                         break;
+
                     case 39: // RIGHT
                         cursor += 1;
                         if (cursor > cursorMax) {
@@ -87,6 +92,7 @@
                         }
                         body.style.backgroundColor = colors[cursor];
                         break;
+
                     case 37: // LEFT
                         cursor -= 1;
                         if (cursor < 0) {
@@ -96,7 +102,7 @@
                         break;
                 }
             };
-            document.body.focus();
+            body.focus();
         };
     </script>
 </head>
@@ -104,12 +110,15 @@
     <section>
         <div>
             <div>
-                <h1>Press</h1>
+                <h2>What is this?</h2>
+                <p>A simple full screen enabled primary colors tester. Use it to make sure there are no obvious dead pixels (like when buying a display).</p>
+
+                <h2>Keys</h2>
                 <ul>
-                    <li>'f' - to enter full screen.</li>
-                    <li>ESC - to exit full screen.</li>
-                    <li>'h' - to toggle directions.</li>
-                    <li>&#8592; / &#8594; - to cycle background color.</li>
+                    <li>'f' - to enter full screen</li>
+                    <li>ESC - to exit full screen</li>
+                    <li>'h' / Space - to toggle directions</li>
+                    <li>&#8592; / &#8594; - to cycle background color</li>
                 </ul>
             </div>
         </div>
